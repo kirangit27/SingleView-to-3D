@@ -24,27 +24,28 @@ This project will need the GPU version of pytorch.
 This section will involve defining a loss function, for fitting voxels, point clouds, and meshes.
 
 ### 1.1. Fitting a voxel grid
-In this subsection, we will define binary cross entropy loss that can help us <b>fit a 3D binary voxel grid</b>.
-Define the loss functions [here](https://github.com/kirangit27/SingleView-to-3D/blob/master/losses.py#L4-L9) in `losses.py` file. 
-For this you can use the pre-defined losses in pytorch library.
-
+In this subsection, binary cross entropy loss is defined that can help us <b>fit a 3D binary voxel grid</b>.
+The loss functions are defined [here](https://github.com/kirangit27/SingleView-to-3D/blob/master/losses.py#L5-L13) in `losses.py` file. 
 Run the file `python fit_data.py --type 'vox'`, to fit the source voxel grid to the target voxel grid. 
-
-**Visualize the optimized voxel grid along-side the ground truth voxel grid using the tools learnt in previous section.**
+#### Results - 
+![Ground-Truth Voxel Grid](https://github.com/kirangit27/SingleView-to-3D/blob/master/results/Prob_1_1-ground_truth_voxel.gif)  |  ![Predicted Voxel Grid](https://github.com/kirangit27/SingleView-to-3D/blob/master/results/Prob_1_1-optimized_voxel.gif)
+:-------------------------:|:-------------------------:
+*Ground-Truth Voxel Grid*  |  *Predicted Voxel Grid*
 
 ### 1.2. Fitting a point cloud
-In this subsection, we will define chamfer loss that can help us <b> fit a 3D point cloud </b>.
-Define the loss functions [here](https://github.com/kirangit27/SingleView-to-3D/blob/master/losses.py#L11-L15) in `losses.py` file.
-<b>We expect you to write your code for this and not use any pytorch3d utilities. You are allowed to use functions inside pytorch3d.ops.knn such as knn_gather or knn_points</b>
-
+In this subsection, the chamfer loss is defined which helps us <b> fit a 3D point cloud </b>.
+The loss functions are defined [here](https://github.com/kirangit27/SingleView-to-3D/blob/master/losses.py#L15-L25) in `losses.py` file.
 Run the file `python fit_data.py --type 'point'`, to fit the source point cloud to the target point cloud. 
-
-**Visualize the optimized point cloud along-side the ground truth point cloud using the tools learnt in previous section.**
+#### Results - 
+![Ground-Truth Point Cloud](https://github.com/kirangit27/SingleView-to-3D/blob/master/results/Prob_1_2-ground_truth_pc.gif)  |  ![Optimized Point Cloud](https://github.com/kirangit27/SingleView-to-3D/blob/master/results/Prob_1_2-optimized_pc.gif)
+:-------------------------:|:-------------------------:
+*Ground-Truth Point Cloud*  |  *Optimized Point Cloud*
 
 ### 1.3. Fitting a mesh
-In this subsection, we will define an additional smoothening loss that can help us <b> fit a mesh</b>.
-Define the loss functions [here](https://github.com/kirangit27/SingleView-to-3D/blob/master/losses.py#L17-L20) in `losses.py` file.
-
-For this you can use the pre-defined losses in pytorch library.
-
+In this subsection, an additional smoothening loss is defined that can help us <b> fit a mesh</b>.
+The loss functions are defined [here](https://github.com/kirangit27/SingleView-to-3D/blob/master/losses.py#L27-L30) in `losses.py` file.
 Run the file `python fit_data.py --type 'mesh'`, to fit the source mesh to the target mesh. 
+#### Results - 
+![Ground-Truth Mesh](https://github.com/kirangit27/SingleView-to-3D/blob/master/results/Prob_1_3-ground_truth_mesh.gif)  |  ![Optimized Mesh](https://github.com/kirangit27/SingleView-to-3D/blob/master/results/Prob_1_3-optimized_mesh.gif)
+:-------------------------:|:-------------------------:
+*Ground-Truth Mesh*  |  *Optimized Mesh*
