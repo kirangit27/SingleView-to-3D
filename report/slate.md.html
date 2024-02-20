@@ -1,0 +1,284 @@
+     <meta charset="utf-8" emacsmode="-*- markdown -*-"><link rel="stylesheet" href="https://casual-effects.com/markdeep/latest/slate.css?">
+
+                        **CMSC848F - 3D Vision: Assignment 2 - Single View to 3D**
+
+Kiran S Patil
+
+UID: 119398364
+
+DirID: kpatil27
+
+
+
+Exploring loss functions (15 points)
+==============================================================
+
+Fitting a voxel grid (5 points)
+--------------------------------------------------------------
+
+![`Ground-Truth Voxel`](../results/Prob_1_1-ground_truth_voxel.gif)![`Optimized Voxel Grid`](../results/Prob_1_1-optimized_voxel.gif)
+
+
+Fitting a point cloud (5 points)
+--------------------------------------------------------------
+
+![`Ground-Truth Point Cloud`](../results/Prob_1_2-ground_truth_pc.gif)![`Optimized Point Cloud`](../results/Prob_1_2-optimized_pc.gif)
+
+
+Fitting a mesh (5 points)
+--------------------------------------------------------------
+
+![`Ground-Truth Mesh`](../results/Prob_1_3-ground_truth_mesh.gif)![`Optimized Mesh`](../results/Prob_1_3-optimized_mesh.gif)
+
+
+Reconstructing 3D from single view (85 points)
+==============================================================
+
+Image to voxel grid (20 points)
+--------------------------------------------------------------
+<!-- ![`Input RGB`](../results/Prob_2_1_vox/vox_5_rgb_img.jpg)![`Ground-Truth Mesh`](../results/Prob_2_1_vox/vox_5_ground_truth.gif)![`Predicted Mesh`](../results/Prob_2_1_vox/vox_5_prediction.gif) -->
+<div style="display: flex; justify-content: center;">
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_1_vox/vox_171_rgb_img.jpg" alt="Image 1" style="width: 400px; height: auto;">
+         <p>Input RGB</p>
+     </div>
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_1_vox/vox_171_ground_truth.gif" alt="Image 2" style="max-width: 100%;">
+         <p>Ground-Truth voxel grid</p>
+     </div>
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_1_vox/vox_171_prediction.gif" alt="Image 3" style="max-width: 100%;">
+         <p>Predicted voxel grid</p>
+     </div>
+</div>
+<div style="display: flex; justify-content: center;">
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_1_vox/vox_61_rgb_img.jpg" alt="Image 1" style="width: 400px; height: auto;">
+         <p>Input RGB</p>
+     </div>
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_1_vox/vox_61_ground_truth.gif" alt="Image 2" style="max-width: 100%;">
+         <p>Ground-Truth voxel grid</p>
+     </div>
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_1_vox/vox_61_prediction.gif" alt="Image 3" style="max-width: 100%;">
+         <p>Predicted voxel grid</p>
+     </div>
+</div>
+<div style="display: flex; justify-content: center;">
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_1_vox/vox_5_rgb_img.jpg" alt="Image 1" style="width: 400px; height: auto;">
+         <p>Input RGB</p>
+     </div>
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_1_vox/vox_5_ground_truth.gif" alt="Image 2" style="max-width: 100%;">
+         <p>Ground-Truth voxel grid</p>
+     </div>
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_1_vox/vox_5_prediction.gif" alt="Image 3" style="max-width: 100%;">
+         <p>Predicted voxel grid</p>
+     </div>
+</div>
+
+Image to point cloud (20 points)
+--------------------------------------------------------------
+<!-- ![`Input RGB`](../results/Prob_1_3-ground_truth_mesh.gif)![`Ground-Truth Mesh`](../results/Prob_2_1_vox/Prob_2_1-4_ground_truth_voxel.gif)![`Predicted Mesh`](../results/Prob_2_1_vox/Prob_2_1-4_optimized_voxel.gif) -->
+<div style="display: flex; justify-content: center;">
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_2_pc/point_19_rgb_img.jpg" alt="Image 1" style="width: 400px; height: auto;">
+         <p>Input RGB</p>
+     </div>
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_2_pc/point_19_ground_truth.gif" alt="Image 2" style="max-width: 100%;">
+         <p>Ground-Truth point cloud</p>
+     </div>
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_2_pc/point_19_prediction.gif" alt="Image 3" style="max-width: 100%;">
+         <p>Predicted point cloud</p>
+     </div>
+</div>
+<div style="display: flex; justify-content: center;">
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_2_pc/point_35_rgb_img.jpg" alt="Image 1" style="width: 400px; height: auto;">
+         <p>Input RGB</p>
+     </div>
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_2_pc/point_35_ground_truth.gif" alt="Image 2" style="max-width: 100%;">
+         <p>Ground-Truth point cloud</p>
+     </div>
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_2_pc/point_35_prediction.gif" alt="Image 3" style="max-width: 100%;">
+         <p>Predicted point cloud</p>
+     </div>
+</div>
+<div style="display: flex; justify-content: center;">
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_2_pc/point_675_rgb_img.jpg" alt="Image 1" style="width: 400px; height: auto;">
+         <p>Input RGB</p>
+     </div>
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_2_pc/point_675_ground_truth.gif" alt="Image 2" style="max-width: 100%;">
+         <p>Ground-Truth point cloud</p>
+     </div>
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_2_pc/point_675_prediction.gif" alt="Image 3" style="max-width: 100%;">
+         <p>Predicted point cloud</p>
+     </div>
+</div>
+
+Image to mesh (20 points)
+--------------------------------------------------------------
+<!-- ![`Input RGB`](../results/Prob_1_3-ground_truth_mesh.gif)![`Ground-Truth Mesh`](../results/Prob_2_1_vox/Prob_2_1-4_ground_truth_voxel.gif)![`Predicted Mesh`](../results/Prob_2_1_vox/Prob_2_1-4_optimized_voxel.gif) -->
+<div style="display: flex; justify-content: center;">
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_3_mesh/mesh_131_rgb_img.jpg" alt="Image 1" style="width: 400px; height: auto;">
+         <p>Input RGB</p>
+     </div>
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_3_mesh/mesh_131_ground_truth.gif" alt="Image 2" style="max-width: 100%;">
+         <p>Ground-Truth Mesh</p>
+     </div>
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_3_mesh/mesh_131_prediction.gif" alt="Image 3" style="max-width: 100%;">
+         <p>Predicted Mesh</p>
+     </div>
+</div>
+<div style="display: flex; justify-content: center;">
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_3_mesh/mesh_13_rgb_img.jpg" alt="Image 1" style="width: 400px; height: auto;">
+         <p>Input RGB</p>
+     </div>
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_3_mesh/mesh_13_ground_truth.gif" alt="Image 2" style="max-width: 100%;">
+         <p>Ground-Truth Mesh</p>
+     </div>
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_3_mesh/mesh_13_prediction.gif" alt="Image 3" style="max-width: 100%;">
+         <p>Predicted Mesh</p>
+     </div>
+</div>
+<div style="display: flex; justify-content: center;">
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_3_mesh/mesh_72_rgb_img.jpg" alt="Image 1" style="width: 400px; height: auto;">
+         <p>Input RGB</p>
+     </div>
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_3_mesh/mesh_72_ground_truth.gif" alt="Image 2" style="max-width: 100%;">
+         <p>Ground-Truth Mesh</p>
+     </div>
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_3_mesh/mesh_72_prediction.gif" alt="Image 3" style="max-width: 100%;">
+         <p>Predicted Mesh</p>
+     </div>
+</div>
+
+Quantitative comparisions(10 points)
+--------------------------------------------------------------
+![`Voxel F1 - 86.953 `](../evals/eval_vox.png)![`Point Cloud F1 - 96.476`](../evals/eval_point.png)![`Mesh F1 - 88.182`](../evals/eval_mesh.png)
+Quantitatively comparing the F1 score of 3D reconstruction for meshes, point clouds, and voxel grids involves evaluating how well each representation captures the details and structure of the 3D object being reconstructed. The F1 score is a metric that balances precision (the ratio of true positives to the sum of true positives and false positives) and recall (the ratio of true positives to the sum of true positives and false negatives).
+
+- Meshes: Meshes generally provide high F1 scores as it can be seen in the above plot. This is because meshes represent surfaces using a collection of vertices, edges, and faces, which can accurately capture the fine details of an object's surface.
+
+- Point Clouds: Point clouds can achieve a good F1 score (best in our case), especially when they are densely sampled. However, it may struggle with capturing thin structures or surfaces that are not well-represented by the points.
+
+- Voxel Grids: Voxel grids can provide a reasonable F1 score, particularly for objects that are well-suited to being represented in a grid-like structure. However, they may lose some fine details compared to meshes.
+
+
+Analyse effects of hyperparms variations (5 points)
+--------------------------------------------------------------
+- voxels : Varying the batch size. Increasing the batch size can have a positive impact on voxel prediction in 3D reconstruction tasks due to its effects on gradient noise reduction, improved generalization, better parallelization, reduced overfitting, a smoother loss landscape, and improved computational efficiency. However, it's important to note that increasing the batch size also comes with potential drawbacks, such as increased memory requirements and a possible reduction in convergence speed for certain types of models. Therefore, the choice of batch size should be carefully considered based on the specific characteristics of the dataset and the model being trained.
+
+<div style="display: flex; justify-content: center;">
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_1_vox/vox_2_rgb_img.jpg" alt="Image 1" style="width: 400px; height: auto;">
+         <p>Input RGB</p>
+     </div>
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_1_vox/vox_2_ground_truth.gif" alt="Image 2" style="max-width: 100%;">
+         <p>Ground-Truth voxel grid</p>
+     </div>
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_1_vox/vox_2_prediction_old.gif" alt="Image 3" style="max-width: 100%;">
+         <p>Predicted voxel grid @ Batch Size 4</p>
+     </div>
+     <div style="flex: 1; text-align: center;">
+          <img src="../results/Prob_2_1_vox/vox_2_prediction.gif" alt="Image 3" style="max-width: 100%;">
+          <p>Predicted voxel grid @ Batch Size 16</p>
+     </div>
+</div>
+<div style="display: flex; justify-content: center;">
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_1_vox/vox_4_rgb_img.jpg" alt="Image 1" style="width: 400px; height: auto;">
+         <p>Input RGB</p>
+     </div>
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_1_vox/vox_4_ground_truth.gif" alt="Image 2" style="max-width: 100%;">
+         <p>Ground-Truth voxel grid</p>
+     </div>
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_1_vox/vox_4_prediction_old.gif" alt="Image 3" style="max-width: 100%;">
+         <p>Predicted voxel grid @ Batch Size 4</p>
+     </div>
+     <div style="flex: 1; text-align: center;">
+          <img src="../results/Prob_2_1_vox/vox_4_prediction.gif" alt="Image 3" style="max-width: 100%;">
+          <p>Predicted voxel grid @ Batch Size 16</p>
+     </div>
+</div>
+
+- Meshes : Varying num_workers. increasing the num_workers parameter in data loading for mesh prediction can lead to improved training efficiency by allowing for more parallelism in data processing. This can result in faster training times, more consistent GPU utilization, and potentially better-performing models. However, it's important to balance this with the capabilities of your hardware, as using too many workers can lead to resource contention and reduced performance.
+<div style="display: flex; justify-content: center;">
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_3_mesh/mesh_32_rgb_img.jpg" alt="Image 1" style="width: 400px; height: auto;">
+         <p>Input RGB</p>
+     </div>
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_3_mesh/mesh_32_ground_truth.gif" alt="Image 2" style="max-width: 100%;">
+         <p>Ground-Truth Mesh</p>
+     </div>
+     <div style="flex: 1; text-align: center;">
+          <img src="../results/Prob_2_3_mesh/mesh_32_prediction_old.gif" alt="Image 3" style="max-width: 100%;">
+          <p>Predicted Mesh @ num_workers 0</p>
+     </div>
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_3_mesh/mesh_32_prediction.gif" alt="Image 3" style="max-width: 100%;">
+         <p>Predicted Mesh @ num_workers 4</p>
+     </div>
+</div>
+<div style="display: flex; justify-content: center;">
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_3_mesh/mesh_112_rgb_img.jpg" alt="Image 1" style="width: 400px; height: auto;">
+         <p>Input RGB</p>
+     </div>
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_3_mesh/mesh_112_ground_truth.gif" alt="Image 2" style="max-width: 100%;">
+         <p>Ground-Truth Mesh</p>
+     </div>
+     <div style="flex: 1; text-align: center;">
+          <img src="../results/Prob_2_3_mesh/mesh_112_prediction_old.gif" alt="Image 3" style="max-width: 100%;">
+          <p>Predicted Mesh @ num_workers 0</p>
+     </div>
+     <div style="flex: 1; text-align: center;">
+         <img src="../results/Prob_2_3_mesh/mesh_112_prediction.gif" alt="Image 3" style="max-width: 100%;">
+         <p>Predicted Mesh @ num_workers 4</p>
+     </div>
+</div>
+
+
+
+Interpret your model (10 points)
+--------------------------------------------------------------
+To gain more gain insights from the results obtained I overlayed the predicted point clounds and meshes over the ground truth (used mesh ground truth for better visualization).
+
+![`Predicted point cloud overlayed on ground truth`](../results/pc_overlay.gif)![`Predicted Mesh overlayed on ground truth`](../results/mesh_overlay.gif)
+
+Overlaying prediction over ground truth serves several important purposes;
+- Validation and Evaluation:
+    - Quantitative Assessment: It allows for direct visual comparison between the predicted data and the ground truth. This aids in evaluating the accuracy of the prediction.
+    - Error Analysis: By overlaying the predicted data over the ground truth, it becomes easy to identify areas where the prediction deviates from the actual data. This can provide insights into the strengths and weaknesses of the prediction algorithm.
+- Visualization and Interpretation:
+    - Visual Feedback: Overlaying helps in providing visual feedback to researchers, engineers, or practitioners. This aids in understanding the behavior of the algorithm and can lead to insights on how to improve it.
+    - Error Localization: It aids in localizing specific areas or regions where the prediction is inaccurate. This information can guide further refinement or optimization of the algorithm.
+
+    In summary, overlaying predicted data over ground truth is a fundamental step in the evaluation and improvement of algorithms in various domains. It provides a direct and intuitive way to assess the performance and accuracy of the prediction process.
+    <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
